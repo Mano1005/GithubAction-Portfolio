@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MANOJ | Cloud / DevOps Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Poppins,sans-serif;color:#e6e8ff}
+
+    body::before{
+      content:"";position:fixed;inset:0;z-index:-4;
+      background:radial-gradient(ellipse at 20% 20%,#361b70 0%,#1a0640 40%,#0a001d 75%)
+    }
+    body::after{
+      content:"";position:fixed;inset:0;z-index:-3;
+      background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='white' opacity='0.15'><circle cx='3' cy='3' r='2'/><circle cx='75' cy='16' r='1.5'/><circle cx='40' cy='85' r='1.2'/><circle cx='92' cy='70' r='1.8'/><circle cx='60' cy='50' r='1.4'/></svg>") repeat;
+      animation:starDrift 50s linear infinite
+    }
+    @keyframes starDrift{100%{background-position:-1200px 800px}}
+
+    header{text-align:center;padding:4rem 1rem 2rem}
+    header h1{
+      font-size:clamp(2rem,7vw,4rem);margin:0;
+      background:linear-gradient(90deg,#00e3ff,#ff2bfd 60%,#ff00c8);
+      -webkit-background-clip:text;color:transparent;text-shadow:0 0 22px rgba(0,255,255,.4)
+    }
+    header p{margin:.3rem 0 1.4rem;font-size:1.15rem;color:#ffe86f}
+    nav a{
+      color:#ff35f7;font-weight:600;text-decoration:none;margin:0 1rem;position:relative;padding-bottom:4px
+    }
+    nav a::after{
+      content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:currentColor;
+      transform:scaleX(0);transition:.3s
+    }
+    nav a:hover::after{transform:scaleX(1)}
+    .resume-btn{
+      margin-top:1.8rem;padding:.85rem 2.4rem;font-weight:600;border:none;cursor:pointer;color:#fff;
+      background:linear-gradient(90deg,#00e3ff,#ff2bfd);border-radius:10px;
+      box-shadow:0 0 16px rgba(0,227,255,.5);transition:.25s
+    }
+    .resume-btn:hover{
+      transform:translateY(-3px) scale(1.05);box-shadow:0 0 22px rgba(255,53,247,.75)
+    }
+
+    section{padding:4rem 1.5rem;max-width:1000px;margin:auto}
+    h2{text-align:center;margin:0 0 3rem;font-size:2.4rem;color:#00e3ff;text-shadow:0 0 14px rgba(0,227,255,.6)}
+
+    .carousel{position:relative;max-width:700px;margin:auto;padding-top:.5rem;height:390px}
+    .slide{
+      background:linear-gradient(145deg,#352c75,#2d1a56);border-radius:14px;
+      box-shadow:0 0 18px rgba(31,0,97,.55);
+      padding:2rem 1.5rem 3.8rem;backdrop-filter:blur(6px);
+      position:absolute;inset:0;opacity:0;transform:translateX(100%);
+      transition:.6s;display:flex;flex-direction:column
+    }
+    .slide.active{opacity:1;transform:translateX(0)}
+    .slide.exit-left{transform:translateX(-100%)}
+    .slide h3{margin:0 0 .8rem;color:#ff35f7}
+    .slide p{margin:0 0 2rem}
+    .slide button{
+      margin-top:auto;align-self:center;padding:.7rem 2.1rem;
+      font-weight:600;border:none;cursor:pointer;color:#fff;
+      background:linear-gradient(90deg,#ff35f7,#ff007a);border-radius:8px
+    }
+    .screenshot-link{
+      display:inline-block;margin-top:.8rem;color:#00e3ff;
+      text-decoration:underline;font-weight:600;transition:.3s
+    }
+    .screenshot-link:hover{color:#ff35f7}
+    .dots{
+      position:absolute;bottom:1.1rem;left:50%;
+      transform:translateX(-50%);display:flex;gap:.6rem;z-index:2
+    }
+    .dots span{
+      width:.75rem;height:.75rem;border-radius:50%;
+      background:#777;cursor:pointer;transition:.3s
+    }
+    .dots span.active{background:#ff35f7}
+
+    .contact-item{
+      display:flex;align-items:center;justify-content:center;gap:.6rem;margin:.4rem 0
+    }
+    .contact-item svg{width:20px;height:20px;stroke:#00e3ff;fill:none;stroke-width:1.8}
+    .contact-item a{color:#00e3ff;text-decoration:none}
+    .contact-item a:hover{color:#ff35f7}
+    footer{text-align:center;padding:2rem 1rem;font-size:.9rem;color:#aab}
+
+    /* ----- MOBILE RESPONSIVENESS ----- */
+    @media (max-width: 600px) {
+      .carousel            { height: 460px; padding-top: .3rem; }
+      .slide               { padding: 1.4rem 1rem 3.4rem; }
+      .slide h3            { font-size: 1.25rem; }
+      .slide p             { font-size: .9rem; line-height: 1.45; text-align: left; }
+      .slide button,
+      .screenshot-link     { width: 100%; text-align: center; display: block; margin-top: .6rem; }
+      .slide button        { margin-top: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Hi This is Manoj</h1>
+  <p>Cloud / DevOps Engineer</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="resume-btn" onclick="window.open('https://mybucket10072025.s3.ap-south-1.amazonaws.com/Manoj.pdf','_blank')">View Resume</button>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p style="text-align:center;max-width:700px;margin:0 auto 1rem;">
+    Motivated and detail-oriented Cloud Computing enthusiast with hands-on experience in AWS services (EC2, S3, Lambda, RDS, VPC, IAM, CloudWatch). Proficient in building serverless applications and automating cloud tasks. Currently pursuing AWS Solutions Architect – Associate certification to strengthen cloud engineering capabilities.
+  </p>
+</section>
+
+<section id="projects">
+  <h2>My Projects</h2>
+  <div class="carousel">
+
+    <div class="slide active">
+      <h3>Interview Tracker</h3>
+      <p>This project demonstrates how to deploy and manage a real-world web application using core AWS services like EC2, RDS, VPC, and Elastic IPs. It combines backend and frontend hosting in a lightweight architecture suitable for showcasing practical cloud engineering and DevOps deployment skills. </p>
+      <button onclick="window.open('https://mybucket10072025.s3.ap-south-1.amazonaws.com/projects/New.pdf','_blank')">View Project</button>
+      <a class="screenshot-link" href="http://13.201.237.226/" target="_blank">🌐 Visit Live Site</a>
+    </div>
+
+    <div class="slide">
+      <h3>Cloud Resume Challenge</h3>
+      <p>The Portfolio Website is a personal static web project designed to showcase my Cloud and DevOps skills, projects, and resume. It features a visually engaging animated interface, dynamic project carousel, and contact details—all hosted entirely on AWS for high availability and scalability. </p>
+      <button onclick="window.open('https://mybucket10072025.s3.ap-south-1.amazonaws.com/projects/Project+Documentation+2.pdf','_blank')">View Project</button>
+      <a class="screenshot-link" href="https://mybucket10072025.s3.ap-south-1.amazonaws.com/index.html">🌐 Visit Live Site</a>
+    </div>
+
+   <div class="slide">
+      <h3>Cloud Resume Challenge</h3>
+      <p>The Portfolio Website is a personal static web project designed to showcase my Cloud and DevOps skills, projects, and resume. It features a visually engaging animated interface, dynamic project carousel, and contact details—all hosted entirely on AWS for high availability and scalability. </p>
+      <button onclick="window.open('https://mybucket10072025.s3.ap-south-1.amazonaws.com/projects/Project+Documentation+2.pdf','_blank')">View Project</button>
+      <a class="screenshot-link" href="https://mybucket10072025.s3.ap-south-1.amazonaws.com/index.html">🌐 Visit Live Site</a>
+    </div>
+
+    <div class="dots"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-item">
+    <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3z"/><polyline points="3 5 12 13 21 5"/></svg>
+    <a href="mailto:manojkavin13@gmail.com">manojkavin13@gmail.com</a>
+  </div>
+  <div class="contact-item">
+    <svg viewBox="0 0 24 24"><path d="M6.5 3a2 2 0 0 0-2 2v2a16 16 0 0 0 16 16h2a2 2 0 0 0 2-2v-3.5a2 2 0 0 0-2-2 11 11 0 0 1-4.7-1 2 2 0 0 0-2.1.4l-1.6 1.6a12.5 12.5 0 0 1-5.6-5.6l1.6-1.6a2 2 0 0 0 .4-2.1A11 11 0 0 1 6.5 5a2 2 0 0 0-2-2Z"/></svg>
+    <a href="tel:+919443409178">+91 94434 09178</a>
+  </div>
+  <div class="contact-item">
+    <svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4a3.2 3.2 0 0 0-1.3-1.7c-1-.7.1-.7.1-.7a2.6 2.6 0 0 1 1.9 1.3 2.7 2.7 0 0 0 3.7 1.1 2.7 2.7 0 0 1 .8-1.7c-2.6-.3-5.4-1.3-5.4-6A4.7 4.7 0 0 1 5 8.4a4.3 4.3 0 0 1 .1-3.2s1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2a4.3 4.3 0 0 1 .1 3.2 4.7 4.7 0 0 1 1.3 3.3c0 4.8-2.8 5.7-5.4 6a3 3 0 0 1 .9 2.3v3.4c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5Z"/></svg>
+    <a href="https://github.com/Mano1005" target="_blank">github.com/Mano1005</a>
+  </div>
+</section>
+
+<footer>© 2025 Manoj — Built with ❤️ using HTML & CSS</footer>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const dotsC=document.querySelector('.dots');let i=0;
+  slides.forEach((_,k)=>{const d=document.createElement('span');if(!k)d.classList.add('active');
+  d.onclick=()=>{slides[i].classList.remove('active');dots[i].classList.remove('active');i=k;
+  slides[i].classList.add('active');dots[i].classList.add('active');reset()};dotsC.appendChild(d)});
+  const dots=[...dotsC.children];
+  function next(){slides[i].classList.remove('active');dots[i].classList.remove('active');
+  i=(i+1)%slides.length;slides[i].classList.add('active');dots[i].classList.add('active')}
+  let t=setInterval(next,6000);
+  function reset(){clearInterval(t);t=setInterval(next,6000)}
+</script>
+
+</body>
+</html>
