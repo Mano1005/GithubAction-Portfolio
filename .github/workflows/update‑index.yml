@@ -1,0 +1,33 @@
+name: Update index.html in S3
+
+# Trigger when index.html changes on the main branch
+on:
+  push:
+    branches: [ main ]
+    paths: [ "index.html" ]   # only run if this file changed
+  workflow_dispatch:          # …or run manually
+
+env:
+  AWS_REGION: ap-south-1
+  S3_BUCKET: mybucket10072025
+  LOCAL_FILE: index.html      # change if your file lives elsewhere
+  S3_KEY: index.html          # path in the bucket (root)
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Upload index.html to S3
+      run: |
+        aws s3 cp $LOCAL_FILE s3://$S3_BUCKET/$S3_KEY --content-type text/html
